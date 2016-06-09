@@ -11,3 +11,6 @@ instagram_username: stoodder
 
 # Build settings
 markdown: kramdown
+
+gems:
+ - jekyll-coffeescript

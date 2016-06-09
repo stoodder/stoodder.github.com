@@ -1,0 +1,87 @@
+.main
+	position: relative
+	z-index: 1
+	padding: 100px 0px 0px 0px
+	height: 100%
+	width: 100%
+	color: $white
+
+	&.is-teal
+		.main--welcome:before
+			color: $teal
+
+		.main--shine
+			background-color: mix($teal, $white, 25%)
+
+	&.is-blue
+		.main--welcome:before
+			color: $blue
+
+		.main--shine
+			background-color: mix($blue, $white, 25%)
+
+	&.is-purple
+		.main--welcome:before
+			color: $purple
+
+		.main--shine
+			background-color: mix($purple, $white, 25%)
+
+	&.is-red
+		.main--welcome:before
+			color: $red
+
+		.main--shine
+			background-color: mix($red, $white, 25%)
+
+	&.is-orange
+		.main--welcome:before
+			color: $orange
+
+		.main--shine
+			background-color: mix($orange, $white, 25%)
+
+	&.is-yellow
+		.main--welcome:before
+			color: $yellow
+
+		.main--shine
+			background-color: mix($yellow, $white, 25%)
+
+	&.is-green
+		.main--welcome:before
+			color: $green
+
+		.main--shine
+			background-color: mix($green, $white, 25%)
+
+	.main--welcome
+		font-size: 48px
+		color: $charcoal
+		font-weight: 600
+		text-align: center
+
+		&:before
+			+transition-duration(5s)
+			+transition-property(color)
+			content: "Hello!"
+			color: $teal
+
+	.main--shine
+		+transition-duration(5s)
+		+transition-property(background)
+		background-color: mix($teal, $white, 25%)
+		position: absolute
+		left: 0px
+		bottom: 0px
+		right: 0px
+		height: 25%
+
+		&:before
+			+gradient($white, transparent)
+			content: ""
+			position: absolute
+			top: 0px
+			left: 0px
+			height: 100%
+			width: 100%

@@ -1,0 +1,72 @@
+.header
+	background-color: $white
+	background-color: rgba($white, 0.95)
+	+gradient($white, rgba($white, 0.9))
+	position: fixed
+	z-index: 100
+	top: 0px
+	left: 0px
+	right: 0px
+	height: 100px
+	overflow: hidden
+	border-bottom: 1px solid transparent
+
+	&.with-shadow
+		border-color: $white
+		+box-shadow(0px 1px 2px rgba($black, 0.05))
+
+	.header--logo
+		float: left
+		position: relative
+		height: 60px
+		width: 60px * (7/6)
+		margin: 20px 0px 20px 30px
+
+		img
+			+transition-property(opacity)
+			+transition-duration(5s)
+			+opacity(0)
+			position: absolute
+			z-index: 1
+			top: 0px
+			left: 0px
+			height: 100%
+			width: 100%
+
+			&.is-active,
+			&.is-deactivating
+				+opacity(1)
+
+			&.is-active
+				z-index: 3
+
+			&.is-deactivating
+				z-index: 2
+
+	.header--menu
+		float: right
+		padding: 0px
+		margin: 0px
+		height: 100px
+		list-style: none
+		font-family: "Verdana"
+		margin-right: 10px
+
+		li.header--menu-item
+			+transition-duration($micro)
+			float: left
+			height: 100px
+			line-height: 100px
+			color: $charcoal
+			margin: 0px
+			text-transform: uppercase
+			padding: 0px 20px
+			font-size: 14px
+			letter-spacing: 0.5px
+			font-weight: 100
+			border-bottom: 3px solid transparent
+			cursor: pointer
+
+			&:hover
+				border-color: $teal
+				color: $teal-darker

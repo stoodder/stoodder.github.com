@@ -1,0 +1,12 @@
++keyframes("animate-spin")
+	0%
+		+rotate(0)
+
+	100%
+		+rotate(360)
+
+.animate-spin
+	+animation("animate-spin" 1.2s linear infinite)
+
+.animate-spin-step
+	+animation("animate-spin" 1.2s steps(9, end) infinite)
