@@ -13,6 +13,13 @@
 		.main--shine
 			background-color: mix($teal, $white, 25%)
 
+		.main--skills
+			.main--skill
+				background-color: mix($teal, $white, 25%)
+
+				.main--skill-label
+					color: $teal
+
 		.main--hire a
 			border-color: $teal
 			color: $teal
@@ -26,6 +33,13 @@
 
 		.main--shine
 			background-color: mix($blue, $white, 25%)
+
+		.main--skills
+			.main--skill
+				background-color: mix($blue, $white, 25%)
+
+				.main--skill-label
+					color: $blue
 
 		.main--hire a
 			border-color: $blue
@@ -41,6 +55,13 @@
 		.main--shine
 			background-color: mix($purple, $white, 25%)
 
+		.main--skills
+			.main--skill
+				background-color: mix($purple, $white, 25%)
+
+				.main--skill-label
+					color: $purple
+
 		.main--hire a
 			border-color: $purple
 			color: $purple
@@ -54,6 +75,13 @@
 
 		.main--shine
 			background-color: mix($red, $white, 25%)
+
+		.main--skills
+			.main--skill
+				background-color: mix($red, $white, 25%)
+
+				.main--skill-label
+					color: $red
 
 		.main--hire a
 			border-color: $red
@@ -69,6 +97,13 @@
 		.main--shine
 			background-color: mix($orange, $white, 25%)
 
+		.main--skills
+			.main--skill
+				background-color: mix($orange, $white, 25%)
+
+				.main--skill-label
+					color: $orange
+
 		.main--hire a
 			border-color: $orange
 			color: $orange
@@ -82,6 +117,13 @@
 
 		.main--shine
 			background-color: mix($yellow, $white, 25%)
+
+		.main--skills
+			.main--skill
+				background-color: mix($yellow, $white, 25%)
+
+				.main--skill-label
+					color: $yellow
 
 		.main--hire a
 			border-color: $yellow
@@ -97,9 +139,26 @@
 		.main--shine
 			background-color: mix($green, $white, 25%)
 
+		.main--skills
+			.main--skill
+				background-color: mix($green, $white, 25%)
+
+				.main--skill-label
+					color: $green
+
 		.main--hire a
 			border-color: $green
 			color: $green
+
+	.main--foreground
+		+transition-duration($short)
+		+transition-property(transform opacity)
+		+scale(1, 1)
+		+opacity(1)
+
+		&.is-faded
+			+scale(0.8, 0.8)
+			+opacity(0.5)
 
 	.main--headline
 		font-size: 48px
@@ -120,7 +179,7 @@
 		color: $charcoal
 		font-weight: 300
 		text-align: center
-		width: 700px
+		width: 800px
 		margin: 0px auto
 		line-height: 40px
 
@@ -131,7 +190,7 @@
 		a
 			+transition-duration($long)
 			+transition-property(color border-color)
-			+border-radius(3px)
+			+border-radius(1px)
 			position: relative
 			display: inline-block
 			font-size: 28px
@@ -177,11 +236,105 @@
 				&:before
 					+translate(0px, -50%)
 
+	.main--skills
+		+flex-container(row, center, flex-end)
+		position: absolute
+		z-index: 2
+		left: 0px
+		bottom: 0px
+		right: 0px
+		height: 100px
+		padding: 0px 30px 0px 30px
+
+		.main--skill-key
+			+opacity(0)
+			+transition-duration($short)
+			+transition-property(opacity)
+			position: relative
+			height: 500px
+			width: 0px
+			color: mix($grey, $white)
+
+			.main--skill-key-label
+				position: absolute
+				top: 0px
+				right: 0px
+				height: 20px
+				line-height: 20px
+				padding-right: 15px
+				font-size: 12px
+
+				&:after
+					position: absolute
+					right: 0px
+					top: 50%
+					content: ""
+					width: 10px
+					border-bottom: 1px solid mix($grey, $white)
+
+				&.master-level
+					top: -10px
+
+				&.expert-level
+					top: 100 - 10px
+
+				&.proficient-level
+					top: 200 - 10px
+
+				&.dabbling-level
+					top: 300 - 10px
+
+		.main--skill
+			+transition-property(height transform background-color)
+			+transition-duration($short 2s        $long)
+			+transition-timing-function('easeOutElastic')
+			+border-top-radius(5px)
+			position: relative
+			height: 100px
+			width: 50px
+			background-color: mix($teal, $white, 25%)
+			margin: 0px 10px
+			overflow: hidden
+
+			i
+				+translate(-50%, 0px)
+				position: absolute 
+				left: 50%
+				bottom: 55px
+				font-size: 35px
+
+			.main--skill-label
+				+rotate(90)
+				+transform-origin(100% 50% 0)
+				+transition-property(color)
+				+transition-duration($long)
+				position: absolute
+				right: 50%
+				bottom: 100px
+				color: $teal
+				font-size: 18px
+				line-height: 20px
+				white-space: nowrap
+
+		&:hover
+			.main--skill-key
+				+opacity(1)
+
+			.main--skill.master-level
+				height: 100px + 400px
+			
+			.main--skill.expert-level
+				height: 100px + 300px
+			
+			.main--skill.proficient-level
+				height: 100px + 200px
+
 	.main--shine
 		+transition-duration($long)
 		+transition-property(background)
 		background-color: mix($teal, $white, 25%)
 		position: absolute
+		z-index: 1
 		left: 0px
 		bottom: 0px
 		right: 0px

@@ -31,3 +31,14 @@ $ ->
 
 	setTimeout(animate, 10000)
 #END onReady
+
+#=======================================
+# Add triggers for the main skills/foreground
+#=======================================
+$ ->
+	$foreground = $(".main--foreground").first()
+	$skills = $(".main--skills").first()
+
+	$skills.on("mouseenter", -> $foreground.addClass("is-faded"))
+	$skills.on("mouseleave", -> $foreground.removeClass("is-faded"))
+#END onReady

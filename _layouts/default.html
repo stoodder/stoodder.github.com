@@ -1,10 +1,52 @@
+---
+---
 <!doctype html>
+<!--
+	Why hello casual inspector of my HTML!
+
+	I'm happy to see you here and I truly hope learning something
+	neat or intruiging from my coding. Enjoy your travels! :)
+
+	Rick
+
+	contact@rickallen.me
+-->
 <html>
 	{% include head.html %}
-
 	<body>
-		{% include header.html %}
+		<header class="header">
+			<div class="header--logo">
+				<img class="is-deactivating" src="/assets/images/logo-green.png" data-animation-class="is-green" />
+				<img class="is-active" src="/assets/images/logo-teal.png" data-animation-class="is-teal" />
+				<img src="/assets/images/logo-blue.png" data-animation-class="is-blue" />
+				<img src="/assets/images/logo-purple.png" data-animation-class="is-purple" />
+				<img src="/assets/images/logo-red.png" data-animation-class="is-red" />
+				<img src="/assets/images/logo-orange.png" data-animation-class="is-orange" />
+				<img src="/assets/images/logo-yellow.png" data-animation-class="is-yellow" />
+			</div>
+			<ul class="header--menu">
+				{% if page.group == "main" %}
+					<li class="header--menu-item is-active">
+						<a>Welcome</a>
+					</li>
+				{% else %}
+					<li class="header--menu-item">
+						<a href="/">Welcome</a>
+					</li>
+				{% endif %}
+				
+
+				<li class="header--menu-item">
+					<a>Portfolio</a>
+				</li>
+				<li class="header--menu-item">
+					<a href="https://github.com/stoodder" target="_blank">Open Source</a>
+				</li>
+				<li class="header--menu-item">
+					<a>About</a>
+				</li>
+			</ul>
+		</header>
 		{{ content }}
-		{% include footer.html %}
 	</body>
 </html>
