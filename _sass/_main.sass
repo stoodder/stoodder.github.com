@@ -7,68 +7,180 @@
 	color: $white
 
 	&.is-teal
-		.main--welcome:before
+		.main--headline:before
 			color: $teal
 
 		.main--shine
 			background-color: mix($teal, $white, 25%)
 
+		.main--hire a
+			border-color: $teal
+			color: $teal
+
+			&:before
+				background-color: $teal
+
 	&.is-blue
-		.main--welcome:before
+		.main--headline:before
 			color: $blue
 
 		.main--shine
 			background-color: mix($blue, $white, 25%)
 
+		.main--hire a
+			border-color: $blue
+			color: $blue
+
+			&:before
+				background-color: $blue
+
 	&.is-purple
-		.main--welcome:before
+		.main--headline:before
 			color: $purple
 
 		.main--shine
 			background-color: mix($purple, $white, 25%)
 
+		.main--hire a
+			border-color: $purple
+			color: $purple
+
+			&:before
+				background-color: $purple
+
 	&.is-red
-		.main--welcome:before
+		.main--headline:before
 			color: $red
 
 		.main--shine
 			background-color: mix($red, $white, 25%)
 
+		.main--hire a
+			border-color: $red
+			color: $red
+
+			&:before
+				background-color: $red
+
 	&.is-orange
-		.main--welcome:before
+		.main--headline:before
 			color: $orange
 
 		.main--shine
 			background-color: mix($orange, $white, 25%)
 
+		.main--hire a
+			border-color: $orange
+			color: $orange
+
+			&:before
+				background-color: $orange
+
 	&.is-yellow
-		.main--welcome:before
+		.main--headline:before
 			color: $yellow
 
 		.main--shine
 			background-color: mix($yellow, $white, 25%)
 
+		.main--hire a
+			border-color: $yellow
+			color: $yellow
+
+			&:before
+				background-color: $yellow
+
 	&.is-green
-		.main--welcome:before
+		.main--headline:before
 			color: $green
 
 		.main--shine
 			background-color: mix($green, $white, 25%)
 
-	.main--welcome
+		.main--hire a
+			border-color: $green
+			color: $green
+
+	.main--headline
 		font-size: 48px
 		color: $charcoal
 		font-weight: 600
 		text-align: center
+		padding: 50px 0px 25px 0px
 
 		&:before
-			+transition-duration(5s)
+			+transition-duration($long)
 			+transition-property(color)
 			content: "Hello!"
+			content: attr(data-welcome)
 			color: $teal
 
+	.main--tagline
+		font-size: 28px
+		color: $charcoal
+		font-weight: 300
+		text-align: center
+		width: 700px
+		margin: 0px auto
+		line-height: 40px
+
+	.main--hire
+		text-align: center
+		padding: 40px 0px 0px 0px
+
+		a
+			+transition-duration($long)
+			+transition-property(color border-color)
+			+border-radius(3px)
+			position: relative
+			display: inline-block
+			font-size: 28px
+			line-height: 64px
+			border: 3px solid $teal
+			color: $teal
+			background-color: transparent
+			padding: 0px
+			height: 70px
+			width: 400px
+			cursor: pointer
+			font-weight: 700
+			overflow: hidden
+
+			&:before
+				+transition-duration($short    $long)
+				+transition-property(transform background-color)
+				+translate(-460px, -50%)
+				+border-right-radius(60px)
+				content: ""
+				position: absolute
+				top: 50%
+				left: 0px
+				width: 460px
+				height: 120px
+				background-color: $teal
+
+			&:after
+				+transition-duration($short)
+				+transition-property(opacity)
+				+translate(-50%, -50%)
+				+opacity(0)
+				content: "Hire Me!"
+				position: absolute
+				top: 50%
+				left: 50%
+				color: $white
+
+			&:hover
+				color: $white
+
+				&:after
+					+opacity(1)
+
+				&:before
+					+translate(0px, -50%)
+
 	.main--shine
-		+transition-duration(5s)
+		+transition-duration($long)
 		+transition-property(background)
 		background-color: mix($teal, $white, 25%)
 		position: absolute

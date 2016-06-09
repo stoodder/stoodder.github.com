@@ -6,6 +6,7 @@
 $ ->
 	$logos = $(".header--logo img")
 	$main = $(".main").first()
+	$header = $(".header").first()
 
 	animate = ->
 		#Aimate the logos
@@ -21,9 +22,12 @@ $ ->
 		#Animate the main screen
 		$main.removeClass( active_logo.data("animation-class") )
 		$main.addClass( next_logo.data("animation-class") )
+		
+		$header.removeClass( active_logo.data("animation-class") )
+		$header.addClass( next_logo.data("animation-class") )
 
-		setTimeout(animate, 5000)
+		setTimeout(animate, 10000)
 	#END animate
 
-	setTimeout(animate, 1000)
+	setTimeout(animate, 10000)
 #END onReady
