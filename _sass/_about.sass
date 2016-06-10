@@ -1,0 +1,66 @@
+.about
+	+flex-container
+	padding: 100px 0px 0px 0px
+
+	&.is-teal
+		.about--info .about--title
+			color: $teal
+
+	&.is-blue
+		.about--info .about--title
+			color: $blue
+
+	&.is-purple
+		.about--info .about--title
+			color: $purple
+
+	&.is-red
+		.about--info .about--title
+			color: $red
+
+	&.is-orange
+		.about--info .about--title
+			color: $orange
+
+	&.is-yellow
+		.about--info .about--title
+			color: $yellow
+
+	&.is-green
+		.about--info .about--title
+			color: $green
+
+	.about--image
+		+flex-to-size
+		position: relative
+		padding: 20px 30px
+
+	.about--info
+		+flex-to-fill
+		height: 100%
+		padding: 20px 30px
+		color: $charcoal
+
+		.about--title
+			+transition-duration($long)
+			+transition-property(color)
+			font-size: 48px
+			font-weight: bold
+			line-height: 48px
+			color: $teal
+			margin-bottom: 5px
+
+		.about--detail
+			font-size: 20px
+			color: $grey-darker
+			font-weight: 300
+
+			label
+				font-weight: bold
+
+		p.about--description
+			margin: 0px
+			padding: 20px 0px
+			font-size: 22px
+			font-weight: 100
+			line-height: 30px

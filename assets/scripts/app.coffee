@@ -8,6 +8,7 @@ $ ->
 	$main = $(".main").first()
 	$header = $(".header").first()
 	$portfolioItems = $(".portfolio--item")
+	$about = $(".about")
 
 	animate = ->
 		#Aimate the logos
@@ -29,6 +30,9 @@ $ ->
 		
 		$portfolioItems.removeClass( active_logo.data("animation-class") )
 		$portfolioItems.addClass( next_logo.data("animation-class") )
+		
+		$about.removeClass( active_logo.data("animation-class") )
+		$about.addClass( next_logo.data("animation-class") )
 
 		setTimeout(animate, 10000)
 	#END animate
