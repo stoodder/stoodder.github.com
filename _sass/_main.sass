@@ -158,6 +158,8 @@
 		+transition-property(transform opacity)
 		+scale(1, 1)
 		+opacity(1)
+		position: relative
+		z-index: 2
 
 		&.is-faded
 			+scale(0.8, 0.8)
@@ -243,7 +245,7 @@
 	.main--skills
 		+flex-container(row, center, flex-end)
 		position: absolute
-		z-index: 2
+		z-index: 3
 		left: 0px
 		bottom: 0px
 		right: 0px
