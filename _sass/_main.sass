@@ -150,6 +150,9 @@
 			border-color: $green
 			color: $green
 
+			&:before
+				background-color: $green
+
 	.main--foreground
 		+transition-duration($short)
 		+transition-property(transform opacity)
@@ -204,6 +207,7 @@
 			cursor: pointer
 			font-weight: 700
 			overflow: hidden
+			text-decoration: none
 
 			&:before
 				+transition-duration($short    $long)
@@ -223,7 +227,7 @@
 				+transition-property(opacity)
 				+translate(-50%, -50%)
 				+opacity(0)
-				content: "Hire Me!"
+				content: "Work with Me"
 				position: absolute
 				top: 50%
 				left: 50%
@@ -247,15 +251,19 @@
 		padding: 0px 30px 0px 30px
 
 		.main--skill-key
-			+opacity(0)
-			+transition-duration($short)
+			+transition-duration($short )
 			+transition-property(opacity)
+			+opacity(0)
 			position: relative
 			height: 500px
 			width: 0px
-			color: mix($grey, $white)
+			color: $grey
 
 			.main--skill-key-label
+				+transition-duration($short)
+				+transition-property(transform)
+				+transition-delay(0s)
+				+translateX(-200px)
 				position: absolute
 				top: 0px
 				right: 0px
@@ -270,7 +278,7 @@
 					top: 50%
 					content: ""
 					width: 10px
-					border-bottom: 1px solid mix($grey, $white)
+					border-bottom: 1px solid $grey
 
 				&.master-level
 					top: -10px
@@ -315,10 +323,26 @@
 				font-size: 18px
 				line-height: 20px
 				white-space: nowrap
+				font-weight: 100
 
 		&:hover
 			.main--skill-key
 				+opacity(1)
+
+				.main--skill-key-label
+					+translateX(0px)
+
+					&:nth-child(1)
+						+transition-delay($short + 0.3s)
+
+					&:nth-child(2)
+						+transition-delay($short + 0.2s)
+
+					&:nth-child(3)
+						+transition-delay($short + 0.1s)
+
+					&:nth-child(4)
+						+transition-delay($short)
 
 			.main--skill.master-level
 				height: 100px + 400px

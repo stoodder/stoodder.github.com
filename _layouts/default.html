@@ -31,20 +31,34 @@
 					</li>
 				{% else %}
 					<li class="header--menu-item">
-						<a href="/">Welcome</a>
+						<a href="{{ "/" | prepend: site.baseurl }}">Welcome</a>
 					</li>
 				{% endif %}
 				
 
-				<li class="header--menu-item">
-					<a>Portfolio</a>
-				</li>
+				{% if page.group == "portfolio" %}
+					<li class="header--menu-item is-active">
+						<a>Portfolio</a>
+					</li>
+				{% else %}
+					<li class="header--menu-item">
+						<a href="{{ "/portfolio" | prepend: site.baseurl }}">Portfolio</a>
+					</li>
+				{% endif %}
+
 				<li class="header--menu-item">
 					<a href="https://github.com/stoodder" target="_blank">Open Source</a>
 				</li>
-				<li class="header--menu-item">
-					<a>About</a>
-				</li>
+
+				{% if page.group == "about" %}
+					<li class="header--menu-item is-active">
+						<a>About</a>
+					</li>
+				{% else %}
+					<li class="header--menu-item">
+						<a href="{{ "/about" | prepend: site.baseurl }}">About</a>
+					</li>
+				{% endif %}
 			</ul>
 		</header>
 		{{ content }}

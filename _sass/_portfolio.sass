@@ -1,0 +1,125 @@
+.portfolio
+	padding: 100px 0px 0px 0px
+
+	.portfolio--item
+		+flex-container
+		width: 100%
+		margin-bottom: 50px
+
+		&.is-teal
+			.portfolio--info .portfolio--title
+				color: $teal
+
+			ul.portfolio--links li a
+				color: $teal
+
+		&.is-blue
+			.portfolio--info .portfolio--title
+				color: $blue
+
+			ul.portfolio--links li a
+				color: $blue
+
+		&.is-purple
+			.portfolio--info .portfolio--title
+				color: $purple
+
+			ul.portfolio--links li a
+				color: $purple
+
+		&.is-red
+			.portfolio--info .portfolio--title
+				color: $red
+
+			ul.portfolio--links li a
+				color: $red
+
+		&.is-orange
+			.portfolio--info .portfolio--title
+				color: $orange
+
+			ul.portfolio--links li a
+				color: $orange
+
+		&.is-yellow
+			.portfolio--info .portfolio--title
+				color: $yellow
+
+			ul.portfolio--links li a
+				color: $yellow
+
+		&.is-green
+			.portfolio--info .portfolio--title
+				color: $green
+
+			ul.portfolio--links li a
+				color: $green
+
+		.portfolio--image
+			+flex-to-size
+			position: relative
+			padding: 20px 30px
+
+		.portfolio--info
+			+flex-to-fill
+			height: 100%
+			padding: 20px 30px
+			color: $charcoal
+
+			.portfolio--title
+				+transition-duration($long)
+				+transition-property(color)
+				font-size: 48px
+				font-weight: bold
+				line-height: 48px
+				color: $teal
+				margin-bottom: 5px
+
+			.portfolio--detail
+				font-size: 20px
+				color: $grey-darker
+				font-weight: 300
+
+				label
+					font-weight: bold
+
+			p.portfolio--description
+				margin: 0px
+				padding: 20px 0px
+				font-size: 22px
+				font-weight: 100
+				line-height: 30px
+
+		ul.portfolio--links
+			list-style: none
+			padding: 5px 0px 0px 0px
+			margin: 0px
+
+			li
+				display: inline-block
+				margin-right: 10px
+				color: $grey-darker
+
+				&:after
+					+border-radius(3px)
+					content: ""
+					display: inline-block
+					height: 4px
+					width: 4px
+					background-color: $grey-lightest
+					vertical-align: middle
+					margin-left: 10px
+
+				&:last-child:after
+					display: none
+
+				a
+					+transition-duration($long)
+					+transition-property(color)
+					text-decoration: none
+					color: $teal
+					font-size: 18px
+					font-weight: 100
+
+					&:hover
+						text-decoration: underline

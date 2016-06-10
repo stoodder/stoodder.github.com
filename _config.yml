@@ -1,8 +1,10 @@
 # Site settings
-title: Rick Allen | Software and Startup Consulting
+title: RA Consulting | Software and Startup Consulting
 email: hello@rickallen.me
 description: >
-  WIP
+  I'm a full-stack software engineer with a knack for building businesses.
+  I offer startup consulting and freelance software engineering.
+  I've successfully delivered more than 100 client projects ranging from startups to enterprises.
 baseurl: ""
 url: "http://rickallen.me"
 twitter_username: stoodder
