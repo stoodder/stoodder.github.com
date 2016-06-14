@@ -1,5 +1,6 @@
 .portfolio
 	padding: 100px 0px 0px 0px
+	width: 100%
 
 	.portfolio--item
 		+flex-container
@@ -7,6 +8,9 @@
 		width: 100%
 		padding-bottom: 25px
 		margin-bottom: 25px
+
+		+mobile
+			+flex-container(column, flex-start, center)
 
 		&:before
 			+border-radius(10px)
@@ -21,6 +25,9 @@
 			margin: -5px 0px 0px -5px
 			background-color: $white
 
+			+mobile
+				display: none
+
 		&:after
 			content: ""
 			height: 1px
@@ -31,6 +38,9 @@
 			top: 100%
 			left: 50%
 			margin: -1px 0px 0px -50px
+
+			+mobile
+				display: none
 
 		&:last-child
 			&:before, &:after
@@ -81,18 +91,19 @@
 
 		.portfolio--image
 			+flex-to-size
-			+box-shadow(0px 1px 2px $white-darkest)
 			position: relative
 			margin: 20px 30px
 			width: 352px
 			min-height: 400px
 			overflow: hidden
 			text-align: center
-			border: 1px solid $white-darkest
 
-			&.with-padding
-				img
-					top: 25px
+			+mobile
+				+flex-order(1)
+				min-height: auto
+				width: auto
+				margin: 0px
+				padding: 25px 20px
 
 			img
 				+translate(-50%, 0px)
@@ -101,11 +112,23 @@
 				left: 50%
 				max-width: 100%
 
+				+mobile
+					+translate(0px, 0px)
+					position: relative
+					top: auto
+					left: auto
+
 		.portfolio--info
 			+flex-to-fill
-			height: 100%
 			padding: 20px 30px
 			color: $charcoal
+
+			+mobile
+				+flex-order(2)
+				+flex-to-size
+				padding: 0px 20px
+				width: 100%
+				overflow: hidden
 
 			.portfolio--title
 				+transition-duration($long)
@@ -131,6 +154,10 @@
 				font-weight: 100
 				line-height: 30px
 
+				+mobile
+					width: 100%
+					margin: 0px
+
 				a
 					+transition-duration($long)
 					+transition-property(color)
@@ -142,6 +169,7 @@
 
 			.portfolio--tweet
 				display: block
+				display: none
 
 				blockquote
 					display: none
