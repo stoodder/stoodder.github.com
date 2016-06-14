@@ -2,6 +2,9 @@
 	+flex-container
 	padding: 100px 0px 0px 0px
 
+	+mobile
+		+flex-container(column)
+
 	&.is-teal
 		.about--info .about--title
 			color: $teal
@@ -33,7 +36,7 @@
 	.about--image
 		+flex-to-size
 		position: relative
-		margin: 20px 30px
+		padding: 20px 30px
 		width: 250px
 		text-align: center
 
@@ -42,11 +45,19 @@
 			height: 150px
 			width: 150px
 
+		+mobile
+			padding: 25px 20px 0px 20px
+			width: 100%
+
 	.about--info
 		+flex-to-fill
 		height: 100%
 		padding: 20px 30px
 		color: $charcoal
+
+		+mobile
+			text-align: center
+			padding: 25px 20px
 
 		.about--title
 			+transition-duration($long)
@@ -57,10 +68,17 @@
 			color: $teal
 			margin-bottom: 5px
 
+			+mobile
+				font-size: 36px
+				line-height: 36px
+
 		.about--detail
 			font-size: 20px
 			color: $grey-darker
 			font-weight: 300
+
+			+mobile
+				font-size: 16px
 
 			label
 				font-weight: bold
@@ -71,3 +89,9 @@
 			font-size: 22px
 			font-weight: 100
 			line-height: 30px
+
+			+mobile
+				font-size: 18px
+				line-height: 24px
+				width: 100%
+				margin: 0px
