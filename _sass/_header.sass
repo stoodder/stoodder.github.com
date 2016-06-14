@@ -10,6 +10,11 @@
 	height: 80px
 	overflow: hidden
 
+	+mobile
+		height: 100px
+		width: 100%
+		overflow: visible
+
 	&.is-teal
 		.header--menu .header--menu-item.is-active
 			color: $teal
@@ -73,6 +78,20 @@
 			&.is-deactivating
 				z-index: 2
 
+		+mobile
+			display: inline-block
+			float: auto
+			margin: 0px
+			width: 100%
+			height: 50px
+
+			img
+				top: 10px
+				left: 50%
+				height: 40px
+				width: 40px * (7/6)
+				margin: 0px 0px 0px (-20px * (7/6))
+
 	.header--menu
 		float: right
 		padding: 0px
@@ -81,6 +100,14 @@
 		list-style: none
 		font-family: "Verdana"
 		margin-right: 10px
+
+		+mobile
+			+flex-container
+			overflow: auto
+			width: 100%
+			height: 50px
+			line-height: 50px
+			margin: 0px
 
 		li.header--menu-item
 			+transition-duration($short)
@@ -97,6 +124,14 @@
 			border-bottom: 2px solid transparent
 			cursor: pointer
 
+			+mobile
+				+flex-grow(1)
+				float: auto
+				height: 50px
+				line-height: 55px
+				font-size: 11px
+				text-align: center
+
 			a
 				display: block
 				height: 100%
@@ -104,6 +139,9 @@
 				padding: 0px 20px
 				text-decoration: none
 				color: $charcoal
+
+				+mobile
+					padding: 0px
 
 			&:hover
 				border-color: $grey

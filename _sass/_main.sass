@@ -6,6 +6,9 @@
 	width: 100%
 	color: $white
 
+	+mobile
+		padding: 100px 0px 0px 0px
+
 	&.is-teal
 		.main--headline:before
 			color: $teal
@@ -165,6 +168,10 @@
 			+scale(0.8, 0.8)
 			+opacity(0.5)
 
+			+mobile
+				+scale(1, 1)
+				+opacity(1)
+
 	.main--headline
 		font-size: 48px
 		color: $charcoal
@@ -172,12 +179,19 @@
 		text-align: center
 		padding: 50px 0px 25px 0px
 
+		+mobile
+			padding: 25px 0px
+			font-size: 36px
+
 		&:before
 			+transition-duration($long)
 			+transition-property(color)
 			content: "Hello!"
 			content: attr(data-welcome)
 			color: $teal
+
+			+mobile
+				display: block
 
 	.main--tagline
 		font-size: 28px
@@ -188,9 +202,18 @@
 		margin: 0px auto
 		line-height: 40px
 
+		+mobile
+			width: 100%
+			font-size: 18px
+			line-height: 24px
+			padding: 0px 20px
+
 	.main--hire
 		text-align: center
 		padding: 40px 0px 0px 0px
+
+		+mobile
+			padding: 25px 20px 0px 20px
 
 		a
 			+transition-duration($long)
@@ -211,6 +234,13 @@
 			overflow: hidden
 			text-decoration: none
 
+			+mobile
+				display: block
+				width: auto
+				height: 50px
+				font-size: 18px
+				line-height: 44px
+
 			&:before
 				+transition-duration($short    $long)
 				+transition-property(transform background-color)
@@ -224,6 +254,9 @@
 				height: 120px
 				background-color: $teal
 
+				+mobile
+					display: none
+
 			&:after
 				+transition-duration($short)
 				+transition-property(opacity)
@@ -234,6 +267,9 @@
 				top: 50%
 				left: 50%
 				color: $white
+
+				+mobile
+					display: none
 
 			&:hover
 				&:after
@@ -250,7 +286,13 @@
 		bottom: 0px
 		right: 0px
 		height: 100px
-		padding: 0px 30px 0px 30px
+		padding: 0px 30px
+
+		+mobile
+			display: block
+			position: relative
+			padding: 25px 20px
+			height: auto
 
 		.main--skill-key
 			+transition-duration($short )
@@ -260,6 +302,9 @@
 			height: 500px
 			width: 0px
 			color: $grey
+
+			+mobile	
+				display: none
 
 			.main--skill-key-label
 				+transition-duration($short)
@@ -306,12 +351,47 @@
 			margin: 0px 10px
 			overflow: hidden
 
+			+mobile
+				+border-radius(5px)
+				margin: 0px 0px 5px 0px
+				width: 100%
+				height: 40px
+				line-height: 40px
+				padding: 0px 10px
+				overflow: visible
+				white-space: nowrap
+
+			&.master-level
+				+mobile
+					width: 100%
+			
+			&.expert-level
+				+mobile
+					width: 80%
+			
+			&.proficient-level
+				+mobile
+					width: 60%
+
 			i
 				+translate(-50%, 0px)
 				position: absolute 
 				left: 50%
 				bottom: 55px
 				font-size: 35px
+
+				+mobile
+					+translate(0px, 0px)
+					position: relative
+					display: inline-block
+					top: -2px
+					left: 0px
+					bottom: auto
+					font-size: 20px
+					height: 20px
+					width: 20px
+					vertical-align: middle
+					margin-right: 5px
 
 			.main--skill-label
 				+rotate(90)
@@ -326,6 +406,15 @@
 				line-height: 20px
 				white-space: nowrap
 				font-weight: 100
+
+				+mobile
+					+rotate(0)
+					+transform-origin(50% 50% 0)
+					position: relative
+					right: auto
+					bottom: auto
+					display: inline-block
+					vertical-align: middle
 
 		&:hover
 			.main--skill-key
@@ -348,12 +437,21 @@
 
 			.main--skill.master-level
 				height: 100px + 400px
+
+				+mobile
+					height: 40px
 			
 			.main--skill.expert-level
 				height: 100px + 300px
+
+				+mobile
+					height: 40px
 			
 			.main--skill.proficient-level
 				height: 100px + 200px
+
+				+mobile
+					height: 40px
 
 	.main--shine
 		+transition-duration($long)
@@ -365,6 +463,9 @@
 		bottom: 0px
 		right: 0px
 		height: 25%
+
+		+mobile
+			display: none
 
 		&:before
 			+gradient($white, transparent)
