@@ -11,6 +11,7 @@
 
 		+mobile
 			+flex-container(column, flex-start, center)
+			margin-bottom: 0px
 
 		&:before
 			+border-radius(10px)
@@ -129,6 +130,7 @@
 				padding: 0px 20px
 				width: 100%
 				overflow: hidden
+				text-align: center
 
 			.portfolio--title
 				+transition-duration($long)
@@ -164,8 +166,6 @@
 				+mobile
 					font-size: 18px
 					line-height: 24px
-
-				+mobile
 					width: 100%
 					margin: 0px
 
@@ -191,9 +191,13 @@
 			margin: 0px
 
 			li
+				font-size: 18px
 				display: inline-block
 				margin-right: 10px
 				color: $grey-darker
+
+				+mobile
+					font-size: 14px
 
 				&:after
 					+border-radius(3px)
@@ -213,7 +217,6 @@
 					+transition-property(color)
 					text-decoration: none
 					color: $teal
-					font-size: 18px
 					font-weight: 100
 
 					&:hover
