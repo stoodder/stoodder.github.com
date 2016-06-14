@@ -7,51 +7,45 @@
 		margin-bottom: 50px
 
 		&.is-teal
-			.portfolio--info .portfolio--title
-				color: $teal
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $teal
 
 		&.is-blue
-			.portfolio--info .portfolio--title
-				color: $blue
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $blue
 
 		&.is-purple
-			.portfolio--info .portfolio--title
-				color: $purple
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $purple
 
 		&.is-red
-			.portfolio--info .portfolio--title
-				color: $red
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $red
 
 		&.is-orange
-			.portfolio--info .portfolio--title
-				color: $orange
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $orange
 
-		&.is-yellow
-			.portfolio--info .portfolio--title
-				color: $yellow
 
+		&.is-yellow
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $yellow
 
 		&.is-green
-			.portfolio--info .portfolio--title
-				color: $green
-
+			.portfolio--info .portfolio--title,
+			.portfolio--info p.portfolio--description a,
 			ul.portfolio--links li a
 				color: $green
 
@@ -101,6 +95,15 @@
 				font-size: 22px
 				font-weight: 100
 				line-height: 30px
+
+				a
+					+transition-duration($long)
+					+transition-property(color)
+					text-decoration: none
+					color: $teal
+
+					&:hover
+						text-decoration: underline
 
 			.portfolio--tweet
 				display: block
