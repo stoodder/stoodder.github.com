@@ -57,8 +57,20 @@
 
 		.portfolio--image
 			+flex-to-size
+			+box-shadow(0px 1px 2px $white-darkest)
 			position: relative
-			padding: 20px 30px
+			margin: 20px 30px
+			height: 500px
+			width: 352px
+			overflow: hidden
+			text-align: center
+			border: 1px solid $white-darkest
+
+			&.with-padding
+				padding: 25px
+
+			img
+				max-width: 100%
 
 		.portfolio--info
 			+flex-to-fill
