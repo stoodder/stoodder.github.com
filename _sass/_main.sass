@@ -162,7 +162,7 @@
 		+scale(1, 1)
 		+opacity(1)
 		position: relative
-		z-index: 2
+		z-index: 3
 
 		&.is-faded
 			+scale(0.8, 0.8)
@@ -242,8 +242,8 @@
 				line-height: 44px
 
 			&:before
-				+transition-duration($short    $long)
-				+transition-property(transform background-color)
+				+transition(transform background-color, $short $long)
+				+transition(-webkit-transform background-color, $short $long)
 				+translate(-460px, -50%)
 				+border-right-radius(60px)
 				content: ""
@@ -342,12 +342,10 @@
 					top: 300 - 10px
 
 		.main--skill
-			+transition-property(height transform background-color)
-			+transition-duration($short 2s        $long)
-			+transition-timing-function('easeOutElastic')
+			+transition(height background-color, $short $long)
 			+border-top-radius(5px)
 			position: relative
-			z-index: 2
+			z-index: 4
 			height: 100px
 			width: 50px
 			background-color: mix($teal, $white, 25%)
