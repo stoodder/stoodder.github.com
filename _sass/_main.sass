@@ -242,8 +242,9 @@
 				line-height: 44px
 
 			&:before
-				+transition(transform background-color, $short $long)
-				+transition(-webkit-transform background-color, $short $long)
+				+transition-property(-webkit-transform background-color)
+				+transition-property(transform background-color)
+				+transition-duration($short    $long)
 				+translate(-460px, -50%)
 				+border-right-radius(60px)
 				content: ""
