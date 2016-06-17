@@ -46,10 +46,6 @@
 					</li>
 				{% endif %}
 
-				<li class="header--menu-item">
-					<a href="https://github.com/stoodder" target="_blank">Open Source</a>
-				</li>
-
 				{% if page.group == "about" %}
 					<li class="header--menu-item is-active">
 						<a>About</a>
@@ -59,6 +55,10 @@
 						<a href="{{ "/about" | prepend: site.baseurl }}">About</a>
 					</li>
 				{% endif %}
+
+				<li class="header--menu-item">
+					<a href="https://github.com/stoodder" target="_blank">Open Source</a>
+				</li>
 			</ul>
 		</header>
 		{{ content }}
